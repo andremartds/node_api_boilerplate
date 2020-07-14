@@ -8,7 +8,9 @@
     "dev:debug": "nodemon --inspect src/server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "sequelize": "^6.3.3"
   },
   "devdependencies": {
     "nodemon": "^2.0.4"
@@ -20,6 +22,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5",
+    "sequelize-cli": "^6.2.0",
     "sucrase": "^3.15.0"
   }
 }
