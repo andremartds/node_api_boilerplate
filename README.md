@@ -15,6 +15,10 @@
 
   <li> Sequelize </li>
 
+  <li> JWT </li>
+  
+  <li> dotenv </li>
+
 </ul>
 
 <p> The structure proposed for it </p>
