@@ -44,7 +44,7 @@
 
 ## How do you begin a project?
 
-1. Clone the repository with `git clone https://github.com/talyssonoc/node-api-boilerplate`
+1. Clone the repository with `git clone https://github.com/andremartds/nesm_api_boilerplate`
 2. Setup the database on `config/database.js`
 3. Install the dependencies with `yarn` (click here if [you don't have Yarn installed](https://yarnpkg.com/docs/install))
 4. Run the database migrations with `yarn sequelize db:migrate`
@@ -53,4 +53,11 @@
 ## Access:
 
 1. Use Insomnia to interact with API ([Insomnia](https://insomnia.rest/download/))
+2. List of entry points
+   1. http://localhost:3333/users VERBS -> (GET, POST, PUT)
+   2. For you use the route users (verb put) you need using the token generated in the route session in the headers
+   3. http://localhost:3333/session VERB -> (POST) validation and generation of token JWT
 
+## Contributing:
+
+<p> This project is open to suggestions and contribuitions. </p>
