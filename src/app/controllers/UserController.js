@@ -14,6 +14,12 @@ class UserController {
       email,
     });
   }
+
+  async update(req, res) {
+    // const user = User.findByPk(req.userId);
+
+    return res.json({ ok: 'fdas' });
+  }
 }
 
 export default new UserController();
