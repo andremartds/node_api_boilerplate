@@ -59,7 +59,43 @@
 ## Entry points
 
 1. /users VERBS -> (GET, POST, PUT)
+<<<<<<< HEAD
 2. /session VERB -> (POST) validation and generation of token JWT 
+=======
+1. /file VERBS -> (POST)
+2. /session VERB -> (POST) validation and generation of token JWT
+
+## create container docker (suggestion)
+
+```
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:latest
+
+// and run the command
+
+docker start database
+
+```
+
+## values .env
+
+<ul>
+<li> 
+  DB_HOST=localhost
+</li>
+<li> 
+  DB_USER=postgres
+</li>
+<li> 
+  DB_PASS=docker
+</li>
+<li> 
+  DB_HOST=localhost
+</li>
+<li> 
+ DB_NAME=(you need to create the database)
+</li>
+</ul>
+>>>>>>> fd182a3... readme update
 
 ## Beautiful code with prettier and eslint (optional for vscode)
 
