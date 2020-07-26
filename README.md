@@ -54,12 +54,29 @@
 ## Access:
 
 1. Use Insomnia to interact with API ([Insomnia](https://insomnia.rest/download/))
-2. List of entry points
 
 ## Entry points
 
 1. /users VERBS -> (GET, POST, PUT)
-2. /session VERB -> (POST) validation and generation of token JWT 
+1. /file VERBS -> (POST)
+2. /session VERB -> (POST) validation and generation of token JWT
+
+## create container docker (suggestion)
+
+```
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:latest
+
+// and run the command
+
+docker start database
+
+```
+
+## values .env
+DB_HOST=localhost
+DB_USER=postgres
+DB_PASS=docker
+DB_NAME=(you need to create the database)
 
 ## Beautiful code with prettier and eslint (optional for vscode)
 
