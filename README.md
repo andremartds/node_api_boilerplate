@@ -73,10 +73,24 @@ docker start database
 ```
 
 ## values .env
-DB_HOST=localhost
-DB_USER=postgres
-DB_PASS=docker
-DB_NAME=(you need to create the database)
+
+<ul>
+<li> 
+  DB_HOST=localhost
+</li>
+<li> 
+  DB_USER=postgres
+</li>
+<li> 
+  DB_PASS=docker
+</li>
+<li> 
+  DB_HOST=localhost
+</li>
+<li> 
+ DB_NAME=(you need to create the database)
+</li>
+</ul>
 
 ## Beautiful code with prettier and eslint (optional for vscode)
 
