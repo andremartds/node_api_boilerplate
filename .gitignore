@@ -8,3 +8,7 @@ integrations/gulp-plugin/dist
 .nyc_output
 .env
 coverage.lcov
+
+*.png
+*.jpg
+*.jpeg
