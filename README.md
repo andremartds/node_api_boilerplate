@@ -92,7 +92,7 @@ docker start database
 </li>
 </ul>
 
-## Beautiful code with prettier and eslint (optional for vscode)
+## Beautiful code with Prettier and Eslint (optional for vscode)
 
 ```
 yarn add eslint -D
