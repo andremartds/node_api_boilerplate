@@ -47,16 +47,81 @@
 1. Clone the repository with `git clone https://github.com/andremartds/nesm_api_boilerplate`
 2. Setup the database on `config/database.js`
 3. Install the dependencies with `yarn` (click here if [you don't have Yarn installed](https://yarnpkg.com/docs/install))
-4. Run the database migrations with `yarn sequelize db:migrate`
-5. Run the application in development mode with `yarn dev`
+4. edit the .env.example for .env and added your configs
+5. Run the database migrations with `yarn sequelize db:migrate`
+6. Run the application in development mode with `yarn dev`
 
 ## Access:
 
 1. Use Insomnia to interact with API ([Insomnia](https://insomnia.rest/download/))
 2. List of entry points
-   1. http://localhost:3333/users VERBS -> (GET, POST, PUT)
-   2. For you use the route users (verb put) you need using the token generated in the route session in the headers
-   3. http://localhost:3333/session VERB -> (POST) validation and generation of token JWT
+
+## Entry points
+
+1. /users VERBS -> (GET, POST, PUT)
+2. /session VERB -> (POST) validation and generation of token JWT 
+
+## Beautiful code with prettier and eslint (optional for vscode)
+
+```
+yarn add eslint -D
+
+yarn eslint --init
+
+// Select your configs at eslint
+## To check Syntax, find problems, and enforce code style 
+> Javascript Modules
+> select node for React or VUE
+> Select node
+
+// write into file .eslint.js
+
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+  },
+  extends: ['airbnb-base','prettier'],
+  plugins:['prettier'],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
+  rules: {
+    "prettier/prettier":"error",
+    "class-methods-use-this": "off",
+    "no-param-reasign":"off",
+    "camelcase":"off",
+    "no-unused-vars": ["error", {"argsIgnorePattern":"next"}],
+  },
+};
+
+// now add into you config.json
+"editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+    ],
+
+// install prettier
+> yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+// create file .prettierrc
+
+{
+  "singleQuote":true,
+  "trailingComma":"es5"
+}
+
+```
 
 ## Contributing:
 
