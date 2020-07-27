@@ -3,9 +3,7 @@ import { promisify } from 'util';
 
 export default async (req, res, next) => {
   const authHeader = req.headers.authorization;
-
   const [, token] = authHeader.split(' ');
-  console.log(token);
 
   try {
     const decoded = await promisify(jwt.verify)(token, process.env.APP_SECRET);

@@ -1,7 +1,28 @@
 import * as Yup from 'yup';
 import User from '../models/User';
+import File from '../models/File';
 
 class UserController {
+  async index(req, res) {
+    if (!req.userId) {
+      return res.status(400).json({ error: 'user not logged' });
+    }
+    const user = await User.findByPk(req.userId, {
+      attributes: ['id', 'name', 'email', 'photo_id'],
+      include: [
+        {
+          model: File,
+          as: 'photo',
+          attributes: ['id', 'name', 'path', 'url'],
+        },
+      ],
+    });
+    if (!user) {
+      return res.status(400).json({ error: 'user not found' });
+    }
+    return res.json(user);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
