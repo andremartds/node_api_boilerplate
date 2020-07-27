@@ -47,7 +47,18 @@
 
 ## How do you begin a project?
 
-1. Clone the repository with `git clone https://github.com/andremartds/nesm_api_boilerplate`
+### Before, create the docker container (suggestion)
+
+```
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:latest
+
+// and run the command below
+
+docker start database
+
+```
+
+1. Clone the repository with `git clone git@github.com:andremartds/node_api_boilerplate.git`
 2. Setup the database on `config/database.js`
 3. In your first execution, you need to use the NPM for generating folder node_modules, now you can use the yarn  
 4. Edit the .env.example for .env and added your configs
@@ -63,17 +74,6 @@
 1. /users VERBS -> (GET, POST, PUT)
 1. /file VERBS -> (POST)
 2. /session VERB -> (POST) validation and generation of token JWT
-
-## create container docker (suggestion)
-
-```
-docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:latest
-
-// and run the command below
-
-docker start database
-
-```
 
 ## values .env
 
