@@ -12,3 +12,5 @@ coverage.lcov
 *.png
 *.jpg
 *.jpeg
+
+.eslintrc.js

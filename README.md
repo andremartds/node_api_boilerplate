@@ -1,4 +1,4 @@
-# NESM API BOILERPLATE
+# NodeJs API BOILERPLATE
 <p> The main purpose of this project is to provide boilerplate project setup using best practices of programing for Nodejs and Express </p>
 
 ## Stack
@@ -18,6 +18,8 @@
   <li> JWT </li>
   
   <li> dotenv </li>
+  
+  <li> Multer </li>
 
 </ul>
 
@@ -27,18 +29,19 @@
 
   <li> ./ -> Configuration .env, .eslint, .prettier, sequelize and nodemon </li>
 
-  <li> ./src -> All folders for the project and files for initialize </li>
+  <li> src -> All folders for the project and files for initialize </li>
 
-  <li> /src/app -> Controllers and models </li>
+  <li> src/app -> Controllers and models </li>
 
-  <li> /src/app/middlewares -> Middlewares for project </li>
+  <li> src/app/middlewares -> Middlewares for project </li>
   
-  <li> /src/app/models -> Models for project </li>
+  <li> src/app/models -> Models for project </li>
 
-  <li> /src/config -> configs for the project </li>
+  <li> src/config -> configs for the project </li>
 
-  <li> /src/database -> migrations and seeders for database </li>
+  <li> src/database -> migrations and seeders for database </li>
 
+  <li> tmp/uploads -> files uploaded in route /files method POST </li>
 
 </ul>
 
@@ -46,8 +49,8 @@
 
 1. Clone the repository with `git clone https://github.com/andremartds/nesm_api_boilerplate`
 2. Setup the database on `config/database.js`
-3. Install the dependencies with `yarn` (click here if [you don't have Yarn installed](https://yarnpkg.com/docs/install))
-4. edit the .env.example for .env and added your configs
+3. In your first execution, you need to use the NPM for generating folder node_modules, now you can use the yarn  
+4. Edit the .env.example for .env and added your configs
 5. Run the database migrations with `yarn sequelize db:migrate`
 6. Run the application in development mode with `yarn dev`
 
@@ -66,7 +69,7 @@
 ```
 docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:latest
 
-// and run the command
+// and run the command below
 
 docker start database
 
@@ -100,38 +103,15 @@ yarn add eslint -D
 yarn eslint --init
 
 // Select your configs at eslint
-## To check Syntax, find problems, and enforce code style 
+### To check Syntax, find problems, and enforce code style 
 > Javascript Modules
 > select node for React or VUE
 > Select node
 
-// write into file .eslint.js
+// my config for eslint and prettier is in file .eslint.example.js
 
-module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-  },
-  extends: ['airbnb-base','prettier'],
-  plugins:['prettier'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parserOptions: {
-    ecmaVersion: 11,
-    sourceType: 'module',
-  },
-  rules: {
-    "prettier/prettier":"error",
-    "class-methods-use-this": "off",
-    "no-param-reasign":"off",
-    "camelcase":"off",
-    "no-unused-vars": ["error", {"argsIgnorePattern":"next"}],
-  },
-};
 
-// now add into you config.json
+// now add into you config.json (sugestion)
 "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
@@ -141,16 +121,6 @@ module.exports = {
         "typescript",
         "typescriptreact",
     ],
-
-// install prettier
-> yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
-
-// create file .prettierrc
-
-{
-  "singleQuote":true,
-  "trailingComma":"es5"
-}
 
 ```
 
