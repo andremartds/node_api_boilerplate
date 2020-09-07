@@ -45,9 +45,9 @@
 
 </ul>
 
-## How do you begin a project?
+## Simple Steps to Start the Project
 
-### Before, create the docker container (suggestion)
+### Before, create docker container (suggestion)
 
 ```
 docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:latest
@@ -64,10 +64,6 @@ docker start database
 4. Edit the .env.example for .env and added your configs
 5. Run the database migrations with `yarn sequelize db:migrate`
 6. Run the application in development mode with `yarn dev`
-
-## Access:
-
-1. Use Insomnia to interact with API ([Insomnia](https://insomnia.rest/download/))
 
 ## Entry points
 
@@ -94,36 +90,3 @@ docker start database
  DB_NAME=(you need to create the database)
 </li>
 </ul>
-
-## Beautiful code with Prettier and Eslint (optional for vscode)
-
-```
-yarn add eslint -D
-
-yarn eslint --init
-
-// Select your configs at eslint
-### To check Syntax, find problems, and enforce code style 
-> Javascript Modules
-> select node for React or VUE
-> Select node
-
-// my config for eslint and prettier is in file .eslint.example.js
-
-
-// now add into you config.json (sugestion)
-"editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-    ],
-
-```
-
-## Contributing:
-
-<p> This project is open to suggestions and contribuitions. </p>
